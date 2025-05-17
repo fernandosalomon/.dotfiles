@@ -24,8 +24,8 @@
  "widgets": [
       "title",
       "dnd",
-      "mpris",
-      "notifications" 
+      "notifications", 
+      "mpris"
   ],
   "widget-config": {
       "title": {
@@ -38,8 +38,8 @@
           "text": "Notification"
       },
           "mpris": {
-          "image-size": 96,
-          "image-radius": 12
+          "image-size": 80,
+          "image-radius": 14
       },
       "dnd": {
           "text": "Do Not Disturb"
