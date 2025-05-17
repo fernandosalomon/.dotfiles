@@ -1,0 +1,296 @@
+@import "./style/catppuccin-macchiato"
+
+$font: CaskaydiaCove Nerd Font;
+
+* {
+  all: unset; // Unsets everything so you can style everything from scratch
+}
+
+//------------DATE-TIME PANEL-----------------
+
+.date-time-panel{
+  background-color: $surface0;
+  font-family: $font;
+  border-radius: 7px;
+  border: 2px solid $overlay1; 
+  padding: 12px;
+}
+
+.time{
+  font-size: 4.8rem;
+  font-weight: bold;
+  padding: 0 48px;
+  min-width: 200px;
+  color: $peach;
+}
+
+.date{
+  font-size: 2rem;
+  padding-bottom: 1rem ;
+  font-weight: bold;
+  color: $green;
+}
+
+.month-year{
+  font-size: 2.0rem;
+  font-weight: bold;
+  padding-top: 12px;
+  color: $text;
+}
+
+.calendar{
+  padding: 4px;
+  font-weight: normal;
+  font-size: 1.2rem;
+
+  &.highlight{
+    color: $mauve;
+  }
+  
+  &:indeterminate{
+    color: $overlay0;
+  }
+}
+
+.weather-icon {
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.weather-temp {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 12px;
+  color: $sky;
+}
+
+.weather-desc {
+  font-size: 18px;
+  color: $peach;
+}
+
+//------------------------------------------
+
+//-----------SYSTEM PANEL------------------
+
+.system-panel{
+  background-color: $surface0;
+  font-family: $font;
+  padding: 16px;
+  border-radius: 7px;
+  border: 2px solid $overlay0; 
+}
+
+.user-img{
+  background-repeat: no-repeat;
+	background-size: 120px;
+	min-height: 120px;
+	min-width: 120px;
+  border: 2px solid $sapphire;
+  border-radius: 50%;
+  margin: 12px 0;
+}
+
+.user{
+  background-color: $base;
+  padding: 32px;
+  border-radius: 14px;
+}
+
+.user-name{
+    font-size: 1.8rem;
+}
+
+.places{
+  background-color: $base;
+  padding: 32px;
+  border-radius: 14px;
+}
+
+.iconfolder1, .iconfolder2, .iconfolder3, .iconfolder4, .iconfolder5, .iconfolder6  {
+	font-size : 24px;
+	font-weight : normal;
+}
+.iconfolder1 {
+	color: $rosewater;
+}
+.iconfolder2 {
+	color: $green;
+}
+.iconfolder3 {
+	color: $yellow;
+}
+.iconfolder4 {
+	color: $lavender;
+}
+.iconfolder5 {
+	color: $sky;
+}
+
+.label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5, .label_folder6  {
+	font-size : 16px;
+	font-weight : bold;
+  margin-left: 15px;
+}
+.label_folder1 {
+	color: $rosewater;
+}
+.label_folder2 {
+	color: $green;
+}
+.label_folder3 {
+	color: $yellow;
+}
+.label_folder4 {
+	color: $lavender;
+}
+.label_folder5 {
+	color: $sky;
+}
+
+.btn{
+  padding: 10px 12px;
+  border-radius: 7px;
+  
+}
+
+.apps{
+  background-color: $base;
+  padding: 32px;
+  border-radius: 14px;
+}
+
+.app-btn{
+  background-color: $lavender;
+
+  &:hover{
+    background-color: $mauve;
+  }
+}
+
+.powermenu{
+  background-color: $base;
+  padding: 32px;
+  border-radius: 14px;
+}
+
+.shutdown-btn{
+  background-color: $red;
+
+  &:hover{
+    background-color: $rosewater;
+  }
+}
+
+.reboot-btn{
+  background-color: $peach;
+
+  &:hover{
+    background-color: $yellow;
+  }
+}
+
+.logout-btn{
+  background-color: $green;
+
+  &:hover{
+    background-color: $teal;
+  }
+}
+
+.system{
+  background-color: $base;
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.system-icon{
+  font-size: 1.2rem;
+}
+
+.system-cpu{
+  color: $mauve;
+}
+
+.system-ram{
+  color: $sapphire;
+}
+
+.system-disk{
+  color: $green;
+}
+
+.system-bat{
+  color: $green;
+}
+
+.music{
+  background-color: $base;
+  background-size: 120px;
+	min-height: 120px;
+	min-width: 120px;
+	border-radius: 14px;
+  padding: 12px;
+}
+
+.song {
+	color: $sky;
+	font-size : 24px;
+	font-weight : bold;
+	margin : 15px 0px 0px 0px;
+}
+
+.artist {
+	color: $green;
+	font-size : 16px;
+	font-weight : normal;
+}
+
+.btn_prev {
+	color: $overlay1;
+	font-size : 32px;
+	font-weight : normal;
+}
+.btn_play {
+	color: $overlay1;
+	font-size : 32px;
+	font-weight : bold;
+}
+.btn_next {
+	color: $overlay1;
+	font-size : 32px;
+	font-weight : normal;
+}
+
+.music_bar scale trough highlight {
+	all: unset;
+	background-color: $mauve;
+	border-radius: 8px;
+}
+.music_bar scale trough {
+	all: unset;
+	background-color: $overlay0;
+	border-radius: 8px;
+	min-height: 15px;
+	min-width: 225px;
+}
+
+.music-cover{
+  background-size: 110px 110px;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 120px;
+  min-height: 120px;
+  margin-right: 8px;
+}
+
+.song{
+  font-size: 1rem;
+}
+
+.artist{
+  font-size: 1rem;
+}
+
+
+//------------------------------------------

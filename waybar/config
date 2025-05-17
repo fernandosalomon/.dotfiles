@@ -1,0 +1,254 @@
+{
+
+"layer": "top",
+"position": "top",
+"margin": "0px",
+"spacing": "0px",
+"mode": "dock",
+"start-hidden": "false",
+
+"modules-left": ["custom/syspanel", "hyprland/workspaces"],
+
+"modules-center": ["clock"],
+
+"modules-right": [
+                  "cpu", 
+                  "memory", 
+                  "disk", 
+                  "temperature", 
+                  "battery", 
+                  "group/audio",
+                  "network",
+                  "bluetooth",
+                  "custom/swaync", 
+                  "custom/powermenu",
+                  ],
+                  
+  
+"custom/syspanel": {
+  "format": "   ",
+  "on-click": "eww daemon && eww --no-daemonize open system-panel" ,
+  "tooltip": false,
+},
+
+
+ "custom/powermenu": {
+	  "format": "⏻ ",
+	  "on-click": "pkill rofi || true && exec $HOME/.config/rofi/scripts/powermenu",
+	  "tooltip": false,
+  },
+
+  "custom/swaync": {
+	  "tooltip": true,
+	  "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+	  "format": "{} {icon}",
+	  "format-icons": {
+		  "notification": "<span foreground='red'><sup></sup></span>",
+		  "none": "",
+		  "dnd-notification": "<span foreground='red'><sup></sup></span>",
+		  "dnd-none": "",
+		  "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		  "inhibited-none": "",
+		  "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		  "dnd-inhibited-none": ""
+	  },
+	  "return-type": "json",
+	  "exec-if": "which swaync-client",
+	  "exec": "swaync-client -swb",
+	  "on-click": "sleep 0.1 && swaync-client -t -sw",
+	  "on-click-right": "swaync-client -d -sw",
+	  "escape": true,
+  },
+
+
+"clock": {
+  "format":  "  {:%H:%M   %A, %d %B}",
+  "tooltip": false,
+  "interval": 1,
+  "timezone": "America/Argentina/Buenos_Aires",
+  "on-click": "eww daemon && eww --no-daemonize open date-time-panel" 
+},
+
+"hyprland/workspaces": {
+	"disable-scroll": true,
+  "active-only": false,
+	"all-outputs": true,
+	"show-special": false,
+	"on-click": "activate",
+	"on-scroll-up": "hyprctl dispatch workspace e+1",
+	"on-scroll-down": "hyprctl dispatch workspace e-1",
+	"persistent-workspaces": {
+		"*": 5
+	  },
+	"format": "{icon}",
+  "format-icons": {
+    "default": "",
+    },
+	
+  },
+
+  "cpu": {
+	"format": "󰍛 {usage}%",
+	"interval": 1,
+	"min-length": 5,
+	"format-alt-click": "click",
+	"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+	"format-icons": [
+		"▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+	],
+  },
+
+  "disk": {
+	"interval": 30,
+	"path": "/",
+	"format": "󰋊 {percentage_used}%",
+	"tooltip": false,
+  },
+
+  "memory": {
+	"interval": 10,
+	"format": "{used:0.1f}G 󰾆",
+	"format-alt": "󰾆 {percentage}%" ,
+	"format-alt-click": "click",
+	"tooltip": true,
+	"tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+  },
+
+  "battery": {
+	"interval": 5,
+	"align": 0,
+	"rotate": 0,
+	"full-at": 100,
+	"design-capacity": false,
+	"states": {
+		"good": 95,
+		"warning": 30,
+		"critical": 15
+	},
+	"format": "{icon} {capacity}%",
+	"format-charging": " {capacity}%",
+	"format-plugged": "󱘖 {capacity}%",
+	"format-alt-click": "click",
+	"format-full": "{icon} Full",
+	"format-alt": "{icon} {time}",
+  	"format-icons": [
+		"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+	],
+	"format-time": "{H}h {M}min",
+	"tooltip": true,
+	"tooltip-format": "{timeTo} {power}w",
+  },
+  
+  "temperature": {
+	  "interval": 10,
+	  "tooltip": true,
+	  "hwmon-path": [
+		"/sys/class/hwmon/hwmon1/temp1_input",
+		"/sys/class/thermal/thermal_zone0/temp"
+	  ],
+	  //"thermal-zone": 0,
+	  "critical-threshold": 82,
+	  "format-critical": "{temperatureC}°C {icon}",
+	  "format": "{icon} {temperatureC}°C",
+	  "format-icons": [
+		  "󰈸"
+	  ],
+  },
+
+  
+  "pulseaudio#output": {
+	  "format": "{icon} {volume}%",
+	  "format-bluetooth": "{icon} 󰂰 {volume}%",
+	  "format-muted": "󰖁",
+	  "format-icons": {
+		  "headphone": "",
+		  "hands-free": "",
+		  "headset": "",
+		  "phone": "",
+		  "portable": "",
+		  "car": "",
+		  "default": [
+			  "", "", "󰕾",  ""
+		  ],
+		  "ignored-sinks": [
+			  "Easy Effects Sink"
+		  ],
+	  },
+	  "scroll-step": 5.0,
+    "on-click": "$HOME/.config/waybar/scripts/volume.sh --toggle",
+	  "on-click-right": "pavucontrol -t 3",
+	  "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh --inc",
+	  "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh --dec",
+	  "tooltip-format": "{icon} {desc} | {volume}%",
+	  "smooth-scrolling-threshold": 1,
+  },
+
+  "pulseaudio#input": {
+	  "format": "{format_source}",
+	  "format-source": " {volume}%",
+	  "format-source-muted": "",
+    "on-click": "$HOME/.config/waybar/scripts/volume.sh --toggle-mic",
+	  "on-click-right": "pavucontrol -t 4",
+	  "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh --mic-inc",
+	  "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh --mic-dec",
+	  "tooltip-format": "{source_desc} | {source_volume}%",
+	  "scroll-step": 5,
+  },
+
+  "group/audio": {
+	  "orientation": "inherit",
+	  "drawer": {
+		  "transition-duration": 500,
+		  "children-class": "pulseaudio",
+		  "transition-left-to-right": false
+        },
+	  "modules": [
+		  "pulseaudio#output",
+		  "pulseaudio#input",
+	  ]
+  },
+
+ 
+  "bluetooth": {
+	"format": " ",
+	"format-disabled": "󰂳",
+	"format-connected": "󰂱 {num_connections}",
+	"tooltip-format": " {device_alias}",
+	"tooltip-format-connected": "{device_enumerate}",
+	"tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
+	"tooltip": true,
+	"on-click": "blueman-manager",
+  },
+
+  "network": {
+	  "format": "{icon}",
+	  "format-wifi": "{icon}",
+	  "format-ethernet": "󰌘",
+	  "format-disconnected": "󰌙",
+	  "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+	  "format-linked": "󰈁 {ifname} (No IP)",
+	  "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+	  "tooltip-format-ethernet": "{ifname} 󰌘",
+	  "tooltip-format-disconnected": "󰌙 Disconnected",
+	  "max-length": 30,
+	  "format-icons": [
+		  "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+	    ],
+	  "on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nmtui"
+    },
+
+  "group/connections": {
+	  "orientation": "inherit",
+	  "drawer": {
+		"transition-duration": 500,
+		"children-class": "bluetooth",
+		"transition-left-to-right": true
+        },
+	  "modules": [
+		  "network",
+	  	"bluetooth",
+	  ]
+  },
+
+  
+}

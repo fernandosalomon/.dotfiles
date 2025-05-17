@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ROFI_CONFIG_FOLDER="$HOME/.config/rofi/config"
+CONFIG_FILE="$ROFI_CONFIG_FOLDER/launcher.rasi"
+
+rofi -show drun -config $CONFIG_FILE
