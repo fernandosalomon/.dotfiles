@@ -2,7 +2,7 @@
 
 * {
     font-family: "CaskaydiaCove";
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .control-center .notification-row:focus,
@@ -75,7 +75,7 @@
 }
 
 .widget-title>button{
-    background-color: @green;
+    background-color: @lavender;
     border: 1px solid @crust;
     font-size: 1.4rem;
     color: @base;
@@ -93,23 +93,22 @@
 }
 
 .widget-dnd>switch {
-    background: @overlay0;
-    border: 1px solid @mantle;
+    background: #cad3f5;
+    border: 1px solid #cad3f5;
 }
 
 .widget-dnd>switch:checked {
-    background: @green;
-    border: 1px solid @mantle;
+    background: alpha(@green, 0.3);
+    border: 1px solid alpha(@green, 0.3);
 }
 
 .widget-dnd>switch slider {
-    background: @overlay2;
-    border: 2px solid @mantle;
+    background: @surface2;
 }
 
 .widget-dnd>switch:checked slider {
     background: @green;
-    border: 2px solid @mantle;
+    border: 1px solid @green;
 }
 
 .notification-default-action,
@@ -131,112 +130,112 @@
     border-radius: 7px;
   }
   
-  .body-image {
-    background-color: white;
-  }
+.body-image {
+  background-color: white;
+}
   
-  .summary {
-    font-size: 1.2em;
-    font-weight: bold;
-    background: transparent;
-    color: @peach;
-    text-shadow: none;
-  }
+.summary {
+  font-size: 1.2em;
+  font-weight: bold;
+  background: transparent;
+  color: @peach;
+  text-shadow: none;
+}
   
-  .time {
-    font-size: 1.2em;
-    font-weight: normal;
-    color: @lavender;
-    margin-bottom: 5px;
-    font-style: italic;
-  }
+.time {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: @lavender;
+  margin-bottom: 5px;
+  font-style: italic;
+}
   
-  .body {
-    font-size: 12pt;
-    padding: 0;
-    font-weight: normal;
-    background: transparent;
-    color: @text;
-  }
+.body {
+  font-size: 12pt;
+  padding: 0;
+  font-weight: normal;
+  background: transparent;
+  color: @text;
+}
 
-  .floating-notifications .notification-row {
-    padding: 0;
-  }
+.floating-notifications .notification-row {
+  padding: 0;
+}
   
-  .notification-row {
-    outline: none;
-    margin: 0;
-    padding: 0px;
-  }
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0px;
+}
   
-  .notification-row:focus,
-  .notification-row:hover {
-    background: alpha(@mantle, 0.2);
-  }
+.notification-row:focus,
+.notification-row:hover {
+   background: alpha(@mantle, 0.2);
+}
   
-  .notification-group-headers {
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: @text;
-    letter-spacing: 2px;
-  }
+.notification-group-headers {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: @text;
+  letter-spacing: 2px;
+}
   
-  .notification-group-icon {
-    color: alpha(@mantle, 0.7);
-    margin-right: 8px;
-  }
+.notification-group-icon {
+  color: alpha(@mantle, 0.7);
+  margin-right: 8px;
+}
   
-  .notification-group-collapse-button {
-    background: transparent;
-    border: none;
-  }
+.notification-group-collapse-button {
+  background: transparent;
+  border: none;
+}
   
-  .notification-group-collapse-button:hover {
-    background: alpha(@mantle, 0.2);
-  }
+.notification-group-collapse-button:hover {
+  background: alpha(@mantle, 0.2);
+}
   
-  .notification-group-close-all-button {
-    background: transparent;
-    border: none;
-  }
+.notification-group-close-all-button {
+  background: transparent;
+  border: none;
+}
   
-  .notification-group-close-all-button:hover {
-    background: alpha(@mantle, 0.2);
-  }
+.notification-group-close-all-button:hover {
+  background: alpha(@mantle, 0.2);
+}
   
-  .notification {
-    padding: 4px;
-    border-radius: 15px;
-    background: @base;
-  }
+.notification {
+  padding: 4px;
+  border-radius: 15px;
+  background: @base;
+}
   
-  .low {
-    border: 1px solid @yellow;
-  }
+.low {
+  border: 1px solid @yellow;
+}
 
-  .normal {
-    border: 1px solid @peach;
-  }
+.normal {
+  border: 1px solid @peach;
+}
 
-  .notification.critical {
-    background: @base;
-    border: 1px solid @red;
-    color: @text;
-  }
+.notification.critical {
+  background: @base;
+  border: 1px solid @red;
+  color: @text;
+}
   
-  .notification-content {
-    padding: 5px 0;
-    margin-left: 10px;
-    color: @text;
-    background: transparent;
-  }
+.notification-content {
+  padding: 5px 0;
+  margin-left: 10px;
+  color: @text;
+  background: transparent;
+}
   
-  /* no mouse, ty */
-  .close-button,
-  .close-button:hover {
-    background: transparent;
-    color: transparent;
-  }
+/* no mouse, ty */
+.close-button,
+.close-button:hover {
+  background: transparent;
+  color: transparent;
+}
   
 
 .widget-mpris {
@@ -246,15 +245,17 @@
 }
 
 .widget-mpris-player{
-  background: transparent;
+  background: @mantle;
   padding: 12px;
-  /*border-radius: 12px;*/
+}
+
+.widget-mpris-player button{
+  background: alpha(@overlay0, 0.5);
+  color: @text;
 }
 
 .widget-mpris .widget-mpris-player button:hover {
   /* The media player buttons (play, pause, next, etc...) */
-  background: transparent;
-  color: @text;
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-album-art {
