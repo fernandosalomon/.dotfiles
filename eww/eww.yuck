@@ -391,32 +391,35 @@
     (button
       :class "btn shutdown-btn"
       :onclick "poweroff"
-      (image
-        :path "./assets/icons/system/power-off.png"
-        :preserve-aspect-ratio "true"
-        :image-width 24
-        :image-height 24
-      )
+      (label :text "")
+      ;;(image
+      ;;  :path "./assets/icons/system/power-off.png"
+      ;;  :preserve-aspect-ratio "true"
+      ;;  :image-width 24
+      ;;  :image-height 24
+      ;;)
     )
     (button
       :class "btn reboot-btn"
       :onclick "reboot"
-      (image
-        :path "./assets/icons/system/reboot.png"
-        :preserve-aspect-ratio "true"
-        :image-width 24
-        :image-height 24
-      )
+      (label :text "")
+      ;;(image
+      ;;  :path "./assets/icons/system/reboot.png"
+      ;;  :preserve-aspect-ratio "true"
+      ;;  :image-width 24
+      ;;  :image-height 24
+      ;;)
     )
     (button
       :class "btn logout-btn"
       :onclick "loginctl kill-session self"
-      (image
-        :path "./assets/icons/system/logout.png"
-        :preserve-aspect-ratio "true"
-        :image-width 24
-        :image-height 24
-      )
+      (label :text "")
+      ;;(image
+      ;;  :path "./assets/icons/system/logout.png"
+      ;;  :preserve-aspect-ratio "true"
+      ;;  :image-width 24
+      ;;  :image-height 24
+      ;;)
     )
   
   )

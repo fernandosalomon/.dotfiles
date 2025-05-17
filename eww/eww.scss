@@ -176,6 +176,10 @@ $font: CaskaydiaCove Nerd Font;
 
 .shutdown-btn{
   background-color: $red;
+  font-size: 32px;
+  font-weight: bold;
+  color: $mantle;
+  padding-right: 20px;
 
   &:hover{
     background-color: $rosewater;
@@ -184,6 +188,10 @@ $font: CaskaydiaCove Nerd Font;
 
 .reboot-btn{
   background-color: $peach;
+  font-size: 32px;
+  font-weight: bold;
+  color: $mantle;
+  padding-right: 20px;
 
   &:hover{
     background-color: $yellow;
@@ -192,7 +200,11 @@ $font: CaskaydiaCove Nerd Font;
 
 .logout-btn{
   background-color: $green;
-
+  font-size: 32px;
+  font-weight: bold;
+  color: $mantle;
+  padding-right: 20px;
+  
   &:hover{
     background-color: $teal;
   }
