@@ -6,7 +6,7 @@ if [[ "$1" == "--firefox" ]]; then
 	$EWW close-all && firefox &
 
 elif [[ "$1" == "--spotify" ]]; then
-	$EWW close-all && spotify &
+	$EWW close-all && spotify-launcher &
 
 elif [[ "$1" == "--terminal" ]]; then
 	$EWW close-all && kitty ~ &

@@ -89,7 +89,8 @@
 }
 
 .widget-dnd>label{
-    margin: 0 0 0 250px;
+    margin: 0 0 0 200px;
+    font-size: 1.6rem;
 }
 
 .widget-dnd>switch {
