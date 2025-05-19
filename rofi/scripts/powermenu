@@ -3,6 +3,9 @@
 ROFI_CONFIG_FOLDER="$HOME/.config/rofi/config"
 CONFIG_FILE="$ROFI_CONFIG_FOLDER/powermenu.rasi"
 
+# CMDs
+uptime="`uptime -p | sed -e 's/up //g'`"
+
 # Options
 shutdown='  '
 reboot='  '
@@ -15,6 +18,8 @@ no='  '
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
+    -p "Uptime: $uptime" \
+		-mesg "Uptime: $uptime" \
 		-theme $CONFIG_FILE \
     -window-title "rofi-powermenu"
 }
