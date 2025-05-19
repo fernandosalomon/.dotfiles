@@ -5,6 +5,7 @@ HOME_DIR='/home/ffsalomon'
 
 #ln -s $HOME_DIR/.dotfiles/eww $HOME_DIR/.config/eww
 ln -s $HOME_DIR/.dotfiles/hypr $HOME_DIR/.config/hypr
+rm -r $HOME_DIR/.config/kitty
 ln -s $HOME_DIR/.dotfiles/kitty $HOME_DIR/.config/kitty
 ln -s $HOME_DIR/.dotfiles/nvim $HOME_DIR/.config/nvim
 ln -s $HOME_DIR/.dotfiles/rofi $HOME_DIR/.config/rofi
