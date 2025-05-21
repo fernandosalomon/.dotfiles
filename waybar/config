@@ -234,7 +234,7 @@
 	  "format-icons": [
 		  "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
 	    ],
-	  "on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nmtui"
+	  "on-click-right": "exec kitty nmtui"
     },
 
   "group/connections": {
