@@ -234,7 +234,8 @@
 	  "format-icons": [
 		  "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
 	    ],
-	  "on-click-right": "exec kitty nmtui"
+	  "on-click-right": "kitty --class NMTUIFLOAT -e nmtui",
+    "on-click": "$HOME/Programs/nimbus-wifi/scripts/nimbus.sh"
     },
 
   "group/connections": {
