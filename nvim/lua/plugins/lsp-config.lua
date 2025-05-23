@@ -32,7 +32,7 @@ return {
 
 
       local lspconfig = require("lspconfig")
-      
+
       lspconfig.pylsp.setup {
         on_attach = custom_attach,
         settings = {
@@ -61,10 +61,14 @@ return {
         capabilities = capabilities,
       }
 
-
       vim.diagnostic.config({
         virtual_text = false,
+        signs = false,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
       })
+
 
       vim.o.updatetime = 250
       vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
